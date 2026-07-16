@@ -1,5 +1,4 @@
 import Section from '../../components/Section/Section';
-import Card from '../../components/Card/Card';
 
 export default function Impact() {
   const stats = [
@@ -30,20 +29,20 @@ export default function Impact() {
         </p>
       </div>
 
-      {/* Stats Grid - Clean, light cards */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6 mb-20">
+      {/* Stats Grid - Borderless editorial layout with huge numbers */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-16 mb-28">
         {stats.map((stat) => (
-          <Card
+          <div
             key={stat.label}
-            className="bg-[#fafaf8] border border-[#2b1029]/5 p-6 flex flex-col items-center justify-center text-center shadow-[0_4px_15px_rgba(43,16,41,0.01)]"
+            className="flex flex-col items-start text-left border-l border-[#2b1029]/10 pl-6"
           >
-            <span className="text-4xl sm:text-5xl font-bold font-display text-[#2b1029] mb-2">
+            <span className="text-5xl sm:text-6xl font-bold font-display text-[#2b1029] tracking-tight mb-2">
               {stat.value}
             </span>
-            <span className="font-mono text-[0.625rem] text-muted tracking-wider uppercase font-bold">
+            <span className="font-mono text-[0.7rem] text-muted tracking-widest uppercase font-bold">
               {stat.label}
             </span>
-          </Card>
+          </div>
         ))}
       </div>
 

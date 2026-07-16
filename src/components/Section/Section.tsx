@@ -25,11 +25,11 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`py-[var(--section-py)] border-b border-[#2b1029]/5 relative overflow-hidden ${className}`}
+      className={`py-20 md:py-[120px] border-b border-[#2b1029]/5 relative overflow-hidden ${className}`}
       {...props}
     >
       <motion.div
-        className="main-container relative z-10"
+        className="w-full max-w-[1400px] mx-auto px-6 md:px-12 relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-10%' }}

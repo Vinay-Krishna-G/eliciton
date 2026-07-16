@@ -21,12 +21,12 @@ export default function Hero() {
     >
       <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left: Enormous, clean, editorial typography & CTA */}
-        <div className="lg:col-span-6 flex flex-col items-start text-left space-y-6 md:space-y-8">
+        <div className="lg:col-span-5 flex flex-col items-start text-left space-y-6 md:space-y-8">
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#2b1029] font-bold bg-[#effaf6] border border-[#2b1029]/10 px-3.5 py-2 rounded-full">
             Biotechnology Division
           </span>
           <div className="space-y-3">
-            <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold font-display text-[#2b1029] tracking-tight leading-[1.05]">
+            <h1 className="text-5xl sm:text-6xl lg:text-[4rem] font-bold font-display text-[#2b1029] tracking-tight leading-[1.05]">
               Healthy Animals.<br />
               Safer Food Systems.<br />
               <span className="text-[#8dc6bf]">Stronger Communities.</span>
@@ -54,7 +54,7 @@ export default function Hero() {
         </div>
 
         {/* Right: Massive laboratory photo that fills the viewport column height */}
-        <div className="lg:col-span-6 flex justify-center lg:justify-end h-full">
+        <div className="lg:col-span-7 flex justify-center lg:justify-end h-full">
           <div className="w-full aspect-[4/3] lg:aspect-[1.1] rounded-2xl border border-[#2b1029]/10 overflow-hidden shadow-[0_15px_50px_rgba(43,16,41,0.03)] relative bg-[#fafaf8]">
             <img
               src={researchHeroImg}
