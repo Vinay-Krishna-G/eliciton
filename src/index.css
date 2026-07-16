@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+@import "./styles/globals.css";
+
+/* Extend Tailwind with our design system tokens */
+@theme {
+  --color-bg: var(--c-bg);
+  --color-surface: var(--c-surface);
+  --color-border: var(--c-border);
+  --color-border-hover: var(--c-border-hover);
+  --color-plum: var(--c-plum);
+  --color-mint: var(--c-mint);
+  --color-yellow: var(--c-yellow);
+  --color-coral: var(--c-coral);
+  --color-text: var(--c-text);
+  --color-muted: var(--c-muted);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
