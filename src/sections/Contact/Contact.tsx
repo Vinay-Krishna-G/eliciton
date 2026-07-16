@@ -24,10 +24,22 @@ export default function Contact() {
     setFormData({ name: '', email: '', org: '', message: '' });
   };
 
+  const handleNavClick = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 96;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = el.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="contact" className="bg-[#fafaf8]">
-      {/* Contact Form Gird block */}
-      <Section className="border-none py-20">
+      {/* Contact Form Grid block */}
+      <Section className="border-none py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-8">
@@ -149,55 +161,58 @@ export default function Contact() {
         </div>
       </Section>
 
-      {/* Corporate Credible Footer */}
-      <footer className="border-t border-[#2b1029]/10 bg-white py-12 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      {/* Corporate High-Contrast Footer (Deep Plum background, white text) */}
+      <footer className="border-t border-[#2b1029]/15 bg-[#2b1029] text-white py-16 px-6 md:px-12">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           {/* Logo and brief */}
           <div className="md:col-span-6 space-y-4">
-            <span className="flex items-center gap-2.5 text-[#2b1029] font-display text-base font-bold tracking-wider">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#85e8c5] inline-block border border-[#2b1029]/15"></span>
-              ELICITON INNOVATIONS
-            </span>
-            <p className="text-xs text-muted max-w-sm leading-relaxed">
-              Advancing veterinary biotechnology through diagnostics, vaccines, and translational research. Enabling frontline eradication protocols globally.
+            <button
+              onClick={() => handleNavClick('home')}
+              className="flex items-center gap-2.5 text-white font-display text-lg font-extrabold tracking-wider focus:outline-none cursor-pointer"
+            >
+              <span className="w-3.5 h-3.5 rounded-full bg-[#8dc6bf] inline-block border border-white/10"></span>
+              ELICITON
+            </button>
+            <p className="text-xs text-white/60 max-w-sm leading-relaxed">
+              Eliciton Innovations is a global developer of veterinary biotechnology, delivering diagnostics, immunotherapies, and research pipelines to defend ecosystem food security.
             </p>
           </div>
 
           {/* Quick links columns */}
-          <div className="md:col-span-6 grid grid-cols-3 gap-6 text-xs font-body text-muted">
-            <div className="space-y-2">
-              <span className="text-[#2b1029] font-bold tracking-wider block uppercase text-[0.625rem]">Research</span>
-              <ul className="space-y-1">
-                <li>Diagnostics</li>
-                <li>Vaccine Formulations</li>
-                <li>Peptide Therapeutics</li>
+          <div className="md:col-span-6 grid grid-cols-3 gap-6 text-xs font-body text-white/50">
+            <div className="space-y-3">
+              <span className="text-white font-bold tracking-wider block uppercase text-[0.625rem]">Research</span>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleNavClick('research')} className="hover:text-white cursor-pointer focus:outline-none">Diagnostics Focus</button></li>
+                <li><button onClick={() => handleNavClick('research')} className="hover:text-white cursor-pointer focus:outline-none">Vaccine Engineering</button></li>
+                <li><button onClick={() => handleNavClick('research')} className="hover:text-white cursor-pointer focus:outline-none">Translational Science</button></li>
               </ul>
             </div>
-            <div className="space-y-2">
-              <span className="text-[#2b1029] font-bold tracking-wider block uppercase text-[0.625rem]">Company</span>
-              <ul className="space-y-1">
-                <li>About Mission</li>
-                <li>Impact Stats</li>
-                <li>Partner Matrix</li>
+            <div className="space-y-3">
+              <span className="text-white font-bold tracking-wider block uppercase text-[0.625rem]">Innovation</span>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleNavClick('innovation')} className="hover:text-white cursor-pointer focus:outline-none">DIVA Platform</button></li>
+                <li><button onClick={() => handleNavClick('innovation')} className="hover:text-white cursor-pointer focus:outline-none">Technical Specs</button></li>
+                <li><button onClick={() => handleNavClick('innovation')} className="hover:text-white cursor-pointer focus:outline-none">Assay Parameters</button></li>
               </ul>
             </div>
-            <div className="space-y-2">
-              <span className="text-[#2b1029] font-bold tracking-wider block uppercase text-[0.625rem]">Legal</span>
-              <ul className="space-y-1">
-                <li>Terms & Protocol</li>
-                <li>Surveillance Policy</li>
-                <li>Contact liaison</li>
+            <div className="space-y-3">
+              <span className="text-white font-bold tracking-wider block uppercase text-[0.625rem]">Corporate</span>
+              <ul className="space-y-2">
+                <li><button onClick={() => handleNavClick('about')} className="hover:text-white cursor-pointer focus:outline-none">About Us</button></li>
+                <li><button onClick={() => handleNavClick('impact')} className="hover:text-white cursor-pointer focus:outline-none">Measured Impact</button></li>
+                <li><button onClick={() => handleNavClick('impact')} className="hover:text-white cursor-pointer focus:outline-none">Cooperating Partners</button></li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto border-t border-[#2b1029]/5 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-[0.7rem] text-muted font-mono">
+        <div className="max-w-[1400px] mx-auto border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[0.7rem] text-white/40 font-mono">
           <span>&copy; {new Date().getFullYear()} Eliciton Innovations. All rights reserved.</span>
-          <div className="flex gap-4 mt-2 sm:mt-0">
-            <span>LinkedIn</span>
-            <span>ResearchGate</span>
-            <span>Liaison Registry</span>
+          <div className="flex gap-6 mt-4 sm:mt-0">
+            <span className="hover:text-white cursor-pointer">LinkedIn</span>
+            <span className="hover:text-white cursor-pointer">ResearchGate</span>
+            <span className="hover:text-white cursor-pointer">Regulatory Registry</span>
           </div>
         </div>
       </footer>

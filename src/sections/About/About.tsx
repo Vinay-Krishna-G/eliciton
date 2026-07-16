@@ -3,7 +3,7 @@ import oneHealthStaticImg from '../../assets/images/one-health-static.png';
 
 export default function About() {
   return (
-    <Section id="about" className="bg-white">
+    <Section id="about" className="bg-[#fafaf8]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Image */}
         <div className="lg:col-span-5 flex justify-center">

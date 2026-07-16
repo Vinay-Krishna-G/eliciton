@@ -18,18 +18,18 @@ export default function Section({
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     },
   };
 
   return (
     <section
       id={id}
-      className={`py-[var(--section-py)] border-b border-[#2b1029]/10 relative ${className}`}
+      className={`py-[var(--section-py)] border-b border-[#2b1029]/5 relative overflow-hidden ${className}`}
       {...props}
     >
       <motion.div
-        className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10"
+        className="main-container relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-10%' }}

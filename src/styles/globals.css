@@ -8,7 +8,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Native smooth scroll for anchor links */
+  scroll-behavior: smooth;
   background-color: var(--c-bg);
   color: var(--c-text);
   font-family: var(--font-body);
@@ -23,10 +23,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar - Light Scientific style */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -34,17 +34,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(43, 16, 41, 0.15);
-  border-radius: 3px;
+  background: rgba(43, 16, 41, 0.1);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(43, 16, 41, 0.3);
+  background: rgba(43, 16, 41, 0.25);
 }
 
-/* Selection Highlight - Mint */
+/* Selection Highlight */
 ::selection {
-  background-color: #d1f7e9;
+  background-color: #d8f3ec;
   color: var(--c-plum);
 }
 
@@ -59,7 +59,7 @@ a, button {
   transition: color var(--transition-smooth), background-color var(--transition-smooth), border-color var(--transition-smooth);
 }
 
-/* Typography styles - Nature Editorial style */
+/* Typography styles - Nature/Illumina Editorial style */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -71,19 +71,40 @@ h1, h2, h3, h4, h5, h6 {
 p {
   line-height: 1.65;
   color: var(--c-muted);
+  max-width: 75ch; /* Maintain strict readable character limit per line */
 }
 
-
-/* Simple entry fade-in styling */
-.fade-in-on-scroll {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: scrollFadeIn 0.8s var(--ease-out) forwards;
+/* Standardized Content Container - Strict alignment */
+.main-container {
+  width: 100%;
+  max-width: var(--max-w-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
 }
 
-@keyframes scrollFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Accent link layout */
+.inline-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-plum);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition-smooth);
+}
+
+.inline-link:hover {
+  color: var(--c-muted);
+}
+
+.inline-link span {
+  transition: transform var(--transition-smooth);
+}
+
+.inline-link:hover span {
+  transform: translateX(3px);
 }

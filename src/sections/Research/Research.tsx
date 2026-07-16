@@ -1,5 +1,4 @@
 import Section from '../../components/Section/Section';
-import Card from '../../components/Card/Card';
 import researchSparseImg from '../../assets/images/research-sparse.png';
 import researchHeroImg from '../../assets/images/research-hero.png';
 import aquacultureImg from '../../assets/images/aquaculture.png';
@@ -11,21 +10,21 @@ export default function Research() {
       paragraph: 'Mapping biological genetic sequences to establish diagnostic assays that trace pathogen mutations. Our laboratories design assays targeting specific antigenic identifiers, ensuring tests retain diagnostic accuracy as viral vectors drift in field populations.',
       image: researchSparseImg,
       alt: 'Molecular structural molecular modeling visualization',
-      accent: 'border-l-4 border-[#fcd057]',
+      tag: 'MOLECULAR TARGETS',
     },
     {
-      title: 'Vaccine & Immunotherapy Engineering',
+      title: 'Vaccine Engineering',
       paragraph: 'Developing recombinant peptide vaccine formulas that invoke broad protective immunity in domestic livestock. Our focus is on target antigen formulations that eliminate vector replication risks while ensuring robust humoral and cellular immune responses.',
       image: researchHeroImg,
       alt: 'Nanoscale protein structures and cells microscopic image',
-      accent: 'border-l-4 border-[#85e8c5]',
+      tag: 'IMMUNOLOGY',
     },
     {
-      title: 'Therapeutics & Translational Science',
+      title: 'Translational Science',
       paragraph: 'Engineering peptide-based host therapies designed to limit pathogen load post-infection. By accelerating physiological recovery, our treatments help operators control transmission vectors within aquaculture systems and farm enclosures.',
       image: aquacultureImg,
       alt: 'Aquaculture vector water ripples research render',
-      accent: 'border-l-4 border-[#ff8575]',
+      tag: 'AQUATIC ANIMAL HEALTH',
     },
   ];
 
@@ -38,13 +37,13 @@ export default function Research() {
         <h2 className="text-display font-bold leading-tight text-[#2b1029] mb-4">
           Research Focus
         </h2>
-        <p className="text-lead text-muted">
+        <p className="text-lead text-muted max-w-xl">
           Our translational biology programs isolate transmission vectors to manufacture robust veterinary diagnostics and immunotherapies.
         </p>
       </div>
 
-      {/* Alternating Editorial Rows */}
-      <div className="space-y-20 md:space-y-28">
+      {/* Alternating Editorial Columns (Borderless) */}
+      <div className="space-y-24 md:space-y-36">
         {focuses.map((f, idx) => {
           const isReverted = idx % 2 !== 0;
           return (
@@ -58,11 +57,11 @@ export default function Research() {
                   isReverted ? 'lg:order-2' : ''
                 }`}
               >
-                <div className="w-full aspect-[4/3] bg-white border border-[#2b1029]/10 rounded-2xl overflow-hidden shadow-sm flex items-center justify-center p-4">
+                <div className="w-full aspect-[4/3] bg-white border border-[#2b1029]/10 rounded-2xl overflow-hidden shadow-[0_12px_40px_rgba(43,16,41,0.02)] flex items-center justify-center p-3">
                   <img
                     src={f.image}
                     alt={f.alt}
-                    className="w-full h-full object-cover rounded-lg opacity-85 hover:opacity-100 transition-opacity duration-300"
+                    className="w-full h-full object-cover rounded-lg opacity-90 hover:opacity-100 transition-opacity duration-300"
                     loading="lazy"
                   />
                 </div>
@@ -71,17 +70,18 @@ export default function Research() {
               {/* Text Column */}
               <div
                 className={`lg:col-span-7 space-y-4 ${
-                  isReverted ? 'lg:order-1 lg:pr-8' : 'lg:pl-8'
+                  isReverted ? 'lg:order-1 lg:pr-12' : 'lg:pl-12'
                 }`}
               >
-                <Card className={`bg-white p-6 md:p-8 ${f.accent}`}>
-                  <h3 className="font-display font-bold text-2xl text-[#2b1029] mb-4">
-                    {f.title}
-                  </h3>
-                  <p className="text-sm text-muted leading-relaxed">
-                    {f.paragraph}
-                  </p>
-                </Card>
+                <span className="font-mono text-[0.65rem] text-[#8dc6bf] tracking-widest uppercase font-bold block">
+                  {f.tag}
+                </span>
+                <h3 className="font-display font-bold text-3xl text-[#2b1029]">
+                  {f.title}
+                </h3>
+                <p className="text-[0.95rem] text-muted leading-relaxed max-w-xl">
+                  {f.paragraph}
+                </p>
               </div>
             </div>
           );

@@ -19,28 +19,28 @@ export default function Impact() {
   return (
     <Section id="impact" className="bg-white">
       <div className="max-w-3xl mb-16">
-        <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#2b1029] font-bold block mb-3">
+        <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#8dc6bf] font-bold block mb-3">
           Global Reach
         </span>
         <h2 className="text-display font-bold leading-tight text-[#2b1029] mb-4">
           Measured Impact
         </h2>
-        <p className="text-lead text-muted">
-          Our technologies are validated by international institutions and actively deployed across global farming communities.
+        <p className="text-lead text-muted max-w-xl">
+          Our technologies are validated by international institutions and actively deployed across global veterinary networks.
         </p>
       </div>
 
-      {/* Stats Counter Grid */}
+      {/* Stats Grid - Clean, light cards */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6 mb-20">
         {stats.map((stat) => (
           <Card
             key={stat.label}
-            className="bg-[#fafaf8] border border-[#2b1029]/5 p-6 flex flex-col items-center justify-center text-center hover:shadow-sm"
+            className="bg-[#fafaf8] border border-[#2b1029]/5 p-6 flex flex-col items-center justify-center text-center shadow-[0_4px_15px_rgba(43,16,41,0.01)]"
           >
             <span className="text-4xl sm:text-5xl font-bold font-display text-[#2b1029] mb-2">
               {stat.value}
             </span>
-            <span className="font-mono text-[0.625rem] text-muted tracking-wider uppercase font-semibold">
+            <span className="font-mono text-[0.625rem] text-muted tracking-wider uppercase font-bold">
               {stat.label}
             </span>
           </Card>
@@ -55,13 +55,13 @@ export default function Impact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
           {partners.map((group) => (
             <div key={group.category} className="space-y-4">
-              <span className="font-mono text-xs text-green font-bold tracking-wider block">
+              <span className="font-mono text-xs text-[#8dc6bf] font-bold tracking-wider block">
                 {group.category}
               </span>
               <ul className="space-y-2.5 font-body text-sm text-muted">
                 {group.names.map((name) => (
                   <li key={name} className="flex items-center gap-2 border-b border-[#2b1029]/5 pb-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#85e8c5] inline-block"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8dc6bf] inline-block"></span>
                     {name}
                   </li>
                 ))}
